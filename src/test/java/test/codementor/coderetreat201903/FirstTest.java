@@ -31,4 +31,11 @@ public class FirstTest {
     var newCell = new GOL().tick(cell, 2);
     assertThat(newCell, is(LIVING));
   }
+
+  @Test
+  public void deadCellWithTwoNeighboursStaysDead() {
+    var cell = DEAD;
+    var newCell = new GOL().tick(cell, 2);
+    assertThat(newCell, is(DEAD));
+  }
 }
