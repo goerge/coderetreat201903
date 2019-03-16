@@ -11,7 +11,7 @@ class FirstTest {
 
     @Test
     void failing() {
-        var coderetreat = "";
+        var coderetreat = "x";
         assertThat(coderetreat, is(not(emptyString())));
     }
 }
