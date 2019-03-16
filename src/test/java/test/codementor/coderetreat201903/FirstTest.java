@@ -14,7 +14,7 @@ public class FirstTest {
   @Test
   public void liveCellWithoutNeighboursDies() {
     var cell = LIVING;
-    var newCell = GOL.tick(cell, 0);
+    var newCell = new GOL().tick(cell, 0);
     assertThat(newCell, is(DEAD));
   }
 }
