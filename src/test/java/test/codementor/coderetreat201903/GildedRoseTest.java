@@ -44,4 +44,18 @@ public class GildedRoseTest {
     new GildedRose(new Item[]{item}).updateQuality();
     assertThat(item.quality, is(11));
   }
+
+  @Test
+  public void backstagePassIncreasesInQualityStillByOne() {
+    var item = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(11));
+  }
+
+  @Test
+  public void backstagePassIncreasesInQualityTwice() {
+    var item = new Item("Backstage passes to a TAFKAL80ETC concert", 7, 10);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(12));
+  }
 }
