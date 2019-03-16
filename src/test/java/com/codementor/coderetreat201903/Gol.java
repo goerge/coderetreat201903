@@ -8,8 +8,6 @@ public class Gol {
   public Cell tick(Cell cell, int neighbours) {
     if(neighbours == 2)
       return cell;
-    if(neighbours == 3)
-      return LIVING;
-    return DEAD;
+    return neighbours == 3 ? LIVING : DEAD;
   }
 }
