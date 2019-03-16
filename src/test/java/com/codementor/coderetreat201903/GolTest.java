@@ -9,24 +9,18 @@ import static org.hamcrest.Matchers.is;
 
 class GolTest {
 
-    @Test
-    void livingCellDiesDueToUnderPopulation() {
-        var cell = LIVING;
-        var newCell = new Gol().tick(cell, 0);
-        assertThat(newCell, is(DEAD));
-    }
+  @Test
+  void livingCellDiesDueToUnderPopulation() {
+    assertThat(new Gol().tick(LIVING, 0), is(DEAD));
+  }
 
-    @Test
-    void livingCellWith2NeighboursSurvives() {
-        var cell = LIVING;
-        var newCell = new Gol().tick(cell, 2);
-        assertThat(newCell, is(LIVING));
-    }
+  @Test
+  void livingCellWith2NeighboursSurvives() {
+    assertThat(new Gol().tick(LIVING, 2), is(LIVING));
+  }
 
-    @Test
-    void deadCellWithNoNeighboursStaysDead() {
-        var cell = DEAD;
-        var newCell = new Gol().tick(cell, 0);
-        assertThat(newCell, is(DEAD));
-    }
+  @Test
+  void deadCellWithNoNeighboursStaysDead() {
+    assertThat(new Gol().tick(DEAD, 0), is(DEAD));
+  }
 }
