@@ -32,7 +32,17 @@ class GolTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"LIVING, 3, LIVING"})
+  @CsvSource({
+    "LIVING, 0, DEAD",
+    "LIVING, 1, DEAD",
+    "LIVING, 2, LIVING",
+    "LIVING, 3, LIVING",
+    "LIVING, 4, DEAD",
+    "LIVING, 5, DEAD",
+    "LIVING, 6, DEAD",
+    "LIVING, 7, DEAD",
+    "LIVING, 8, DEAD",
+  })
   void cell(Cell currentState, int neighbours, Cell expectedState) {
     assertThat(new Gol().tick(currentState, neighbours), is(expectedState));
   }
