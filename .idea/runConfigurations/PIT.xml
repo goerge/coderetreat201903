@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PIT" type="PIT" factoryName="PIT Runner" REPORT_DIR="$PROJECT_DIR$/build/reports/pit" SOURCE_DIRS="$PROJECT_DIR$/src/main/java" TARGET_CLASSES="com.*" TARGET_TESTS="test.*" otherParams="--outputFormats XML,HTML --mutators ALL">
+    <module name="coderetreat201903" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
