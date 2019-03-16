@@ -25,6 +25,11 @@ class GolTest {
   }
 
   @Test
+  void deadCellWith3NeighboursComesToLife() {
+    assertThat(new Gol().tick(DEAD, 3), is(LIVING));
+  }
+
+  @Test
   void deadCellWithNoNeighboursStaysDead() {
     assertThat(new Gol().tick(DEAD, 0), is(DEAD));
   }
