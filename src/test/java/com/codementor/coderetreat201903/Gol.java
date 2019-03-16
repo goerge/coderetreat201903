@@ -7,12 +7,9 @@ public class Gol {
 
   public Cell tick(Cell cell, int neighbours) {
     switch (neighbours) {
-      case 2:
-        return cell;
-      case 3:
-        return LIVING;
-      default:
-        return DEAD;
+      case 2: return cell;
+      case 3: return LIVING;
+      default: return DEAD;
     }
   }
 }
