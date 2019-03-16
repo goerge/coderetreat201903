@@ -2,18 +2,19 @@ package test.codementor.coderetreat201903;
 
 import org.junit.Test;
 
-import com.codementor.coderetreat201903.SUT;
+import com.codementor.coderetreat201903.GOL;
 
+import static com.codementor.coderetreat201903.GOL.Cell.DEAD;
+import static com.codementor.coderetreat201903.GOL.Cell.LIVING;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.emptyString;
 
 public class FirstTest {
 
   @Test
-  public void failing() {
-    var coderetreat = SUT.getCodecop();
-    assertThat(coderetreat, is(not(emptyString())));
+  public void liveCellWithoutNeighboursDies() {
+    var cell = LIVING;
+    var newCell = GOL.tick(cell, 0);
+    assertThat(newCell, is(DEAD));
   }
 }
