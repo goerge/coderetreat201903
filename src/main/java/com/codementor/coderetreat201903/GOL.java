@@ -14,7 +14,7 @@ public class GOL {
     if (neighbours == 2) {
       return cell;
     }
-    if (neighbours > 2) {
+    if (neighbours == 3) {
       return LIVING;
     }
     return DEAD;
