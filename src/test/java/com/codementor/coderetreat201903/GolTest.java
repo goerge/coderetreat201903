@@ -17,6 +17,13 @@ class GolTest {
     }
 
     @Test
+    void livingCellWith2NeighboursSurvives() {
+        var cell = LIVING;
+        var newCell = new Gol().tick(cell, 2);
+        assertThat(newCell, is(LIVING));
+    }
+
+    @Test
     void deadCellWithNoNeighboursStaysDead() {
         var cell = DEAD;
         var newCell = new Gol().tick(cell, 0);
