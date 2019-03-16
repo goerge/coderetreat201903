@@ -15,4 +15,11 @@ class GolTest {
         var newCell = new Gol().tick(cell, 0);
         assertThat(newCell, is(DEAD));
     }
+
+    @Test
+    void deadCellWithNoNeighboursStaysDead() {
+        var cell = DEAD;
+        var newCell = new Gol().tick(cell, 0);
+        assertThat(newCell, is(DEAD));
+    }
 }
