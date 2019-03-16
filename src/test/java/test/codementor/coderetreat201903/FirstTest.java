@@ -45,4 +45,11 @@ public class FirstTest {
     var newCell = new GOL().tick(cell, 3);
     assertThat(newCell, is(LIVING));
   }
+
+  @Test
+  public void livingCellDiesDueToOverpopulation() {
+    var cell = LIVING;
+    var newCell = new GOL().tick(cell, 4);
+    assertThat(newCell, is(DEAD));
+  }
 }
