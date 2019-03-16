@@ -42,6 +42,15 @@ class GolTest {
     "LIVING, 6, DEAD",
     "LIVING, 7, DEAD",
     "LIVING, 8, DEAD",
+    "DEAD, 0, DEAD",
+    "DEAD, 1, DEAD",
+    "DEAD, 2, DEAD",
+    "DEAD, 3, LIVING",
+    "DEAD, 4, DEAD",
+    "DEAD, 5, DEAD",
+    "DEAD, 6, DEAD",
+    "DEAD, 7, DEAD",
+    "DEAD, 8, DEAD",
   })
   void cell(Cell currentState, int neighbours, Cell expectedState) {
     assertThat(new Gol().tick(currentState, neighbours), is(expectedState));
