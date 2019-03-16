@@ -1,6 +1,8 @@
 package com.codementor.coderetreat201903;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.codementor.coderetreat201903.Cell.DEAD;
 import static com.codementor.coderetreat201903.Cell.LIVING;
@@ -28,6 +30,13 @@ class GolTest {
   void livingCellWith3NeighboursSurvives() {
     assertThat(new Gol().tick(LIVING, 3), is(LIVING));
   }
+
+  @ParameterizedTest
+  @CsvSource({"LIVING, 3, LIVING"})
+  void cell(Cell currentState, int neighbours, Cell expectedState) {
+    assertThat(new Gol().tick(currentState, neighbours), is(expectedState));
+  }
+
 
   @Test
   void deadCellWith3NeighboursComesToLife() {
