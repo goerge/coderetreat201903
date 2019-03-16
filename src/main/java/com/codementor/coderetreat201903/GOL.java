@@ -11,7 +11,7 @@ public class GOL {
   }
 
   public Cell tick(Cell cell, int neighbours) {
-    if (neighbours == 3) {
+    if (neighbours >= 2) {
       return LIVING;
     }
     return DEAD;

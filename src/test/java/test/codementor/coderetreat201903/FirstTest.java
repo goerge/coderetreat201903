@@ -24,4 +24,11 @@ public class FirstTest {
     var newCell = new GOL().tick(cell, 3);
     assertThat(newCell, is(LIVING));
   }
+
+  @Test
+  public void liveCellWithTwoNeighboursSurvives() {
+    var cell = LIVING;
+    var newCell = new GOL().tick(cell, 2);
+    assertThat(newCell, is(LIVING));
+  }
 }
