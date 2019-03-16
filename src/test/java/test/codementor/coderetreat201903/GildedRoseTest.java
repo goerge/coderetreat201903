@@ -18,6 +18,13 @@ public class GildedRoseTest {
   }
 
   @Test
+  public void itemQualityDoesNotDropBelowZero() {
+    var item = new Item("irrelevant", 1, 0);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(0));
+  }
+
+  @Test
   public void agedBrieIncreasesInQuality() {
     var item = new Item("Aged Brie", 1, 10);
     new GildedRose(new Item[]{item}).updateQuality();
