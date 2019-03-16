@@ -16,4 +16,11 @@ public class GildedRoseTest {
     new GildedRose(new Item[]{item}).updateQuality();
     assertThat(item.quality, is(9));
   }
+
+  @Test
+  public void agedBrieIncreasesInQuality() {
+    var item = new Item("Aged Brie", 1, 10);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(11));
+  }
 }
