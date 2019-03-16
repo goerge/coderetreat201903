@@ -25,8 +25,22 @@ public class GildedRoseTest {
   }
 
   @Test
+  public void sulfurasDoesNotChangeQuality() {
+    var item = new Item("Sulfuras, Hand of Ragnaros", 1, 99);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(99));
+  }
+
+  @Test
   public void agedBrieIncreasesInQuality() {
     var item = new Item("Aged Brie", 1, 10);
+    new GildedRose(new Item[]{item}).updateQuality();
+    assertThat(item.quality, is(11));
+  }
+
+  @Test
+  public void backstagePassIncreasesInQuality() {
+    var item = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10);
     new GildedRose(new Item[]{item}).updateQuality();
     assertThat(item.quality, is(11));
   }
